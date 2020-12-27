@@ -17,6 +17,7 @@ import org.apache.commons.fileupload.FileItem;
  */
 public class ImageFileObject implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     private byte[] byteArray;
 
     private String fileName;
