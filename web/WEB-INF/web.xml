@@ -2,11 +2,19 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>ImageUploadServlet</servlet-name>
-        <servlet-class>com.xyneex.uploads.ImageUploadServlet</servlet-class>
+        <servlet-class>com.xyneex.uploads.images.ImageUploadServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>MoveImageServlet</servlet-name>
-        <servlet-class>com.xyneex.uploads.MoveImageServlet</servlet-class>
+        <servlet-class>com.xyneex.uploads.images.MoveImageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VideoUploadServlet</servlet-name>
+        <servlet-class>com.xyneex.uploads.videos.VideoUploadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MoveVideoServlet</servlet-name>
+        <servlet-class>com.xyneex.uploads.videos.MoveVideoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ImageUploadServlet</servlet-name>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>MoveImageServlet</servlet-name>
         <url-pattern>/move-image</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VideoUploadServlet</servlet-name>
+        <url-pattern>/video-uploader</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MoveVideoServlet</servlet-name>
+        <url-pattern>/move-video</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

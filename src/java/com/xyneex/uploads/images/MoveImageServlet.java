@@ -9,7 +9,7 @@
  * or visit www.xyneex.com if you need additional information or have any
  * questions.
  */
-package com.xyneex.uploads;
+package com.xyneex.uploads.images;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -24,7 +24,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class MoveImageServlet extends HttpServlet
 {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *

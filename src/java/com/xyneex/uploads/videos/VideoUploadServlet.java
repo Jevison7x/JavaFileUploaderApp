@@ -9,7 +9,7 @@
  * or visit www.xyneex.com if you need additional information or have any
  * questions.
  */
-package com.xyneex.uploads;
+package com.xyneex.uploads.videos;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -30,7 +30,7 @@ import org.json.JSONObject;
  *
  * @author Jevison7x
  */
-public class ImageUploadServlet extends HttpServlet
+public class VideoUploadServlet extends HttpServlet
 {
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -60,12 +60,13 @@ public class ImageUploadServlet extends HttpServlet
                     for(FileItem item : items)
                         if(!item.isFormField())
                         {
-                            ImageFileObject imageFileObject = new ImageFileObject(item);
-                            String imageFileName = ImageProcessor.createTempImage(imageFileObject, request);
+                            VideoFileObject videoFileObject = new VideoFileObject(item);
+                            String videoFileName = VideoProcessor.createTempVideo(videoFileObject, request);
                             JSONObject jsonObj = new JSONObject();
                             jsonObj.put("name", item.getName());
                             jsonObj.put("size", item.getSize());
-                            jsonObj.put("newfilename", imageFileName);
+                            jsonObj.put("newfilename", videoFileName);
+                            jsonObj.put("mimeType", videoFileObject.getMimeType());
                             jsonArray.put(jsonObj);
                         }
                 }
@@ -115,4 +116,5 @@ public class ImageUploadServlet extends HttpServlet
     {
         return "Short description";
     }// </editor-fold>
+
 }
