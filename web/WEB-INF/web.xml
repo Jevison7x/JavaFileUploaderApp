@@ -24,6 +24,10 @@
         <servlet-name>MoveVideoServlet</servlet-name>
         <servlet-class>com.xyneex.uploads.videos.MoveVideoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CropperImageUploaderServlet</servlet-name>
+        <servlet-class>com.xyneex.uploads.images.CropperImageUploaderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ImageUploadServlet</servlet-name>
         <url-pattern>/image-uploader</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>MoveVideoServlet</servlet-name>
         <url-pattern>/move-video</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CropperImageUploaderServlet</servlet-name>
+        <url-pattern>/cropper-uploader</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -43,15 +43,15 @@ public class ImageProcessor
      */
     private static byte[] compressImage(byte[] original) throws IOException
     {
-        try(ByteArrayInputStream bais = new ByteArrayInputStream(original))
+        try( ByteArrayInputStream bais = new ByteArrayInputStream(original))
         {
             BufferedImage bImg = ImageIO.read(bais);
             //Scale the image down to 250 pixels in with
-            Image scaledImage = bImg.getScaledInstance(250, -1, Image.SCALE_FAST);
+            Image scaledImage = bImg.getScaledInstance(1500, -1, Image.SCALE_FAST);
             //convert image to buffered image
             BufferedImage scaledBimg = toBufferedImage(scaledImage);
             //Convert buffered image to byte array
-            try(ByteArrayOutputStream baos = new ByteArrayOutputStream();)
+            try( ByteArrayOutputStream baos = new ByteArrayOutputStream();)
             {
                 ImageIO.write(scaledBimg, "jpg", baos);
                 byte[] imageInByte = baos.toByteArray();
@@ -98,7 +98,7 @@ public class ImageProcessor
         File tempDir = new File(absolutePath + File.separator + TEMP_DIRECTORY);
         if(!tempDir.exists())
             tempDir.mkdir();
-        try(FileOutputStream fos = new FileOutputStream(absolutePath + File.separator + TEMP_DIRECTORY + File.separator + fileName))
+        try( FileOutputStream fos = new FileOutputStream(absolutePath + File.separator + TEMP_DIRECTORY + File.separator + fileName))
         {
             fos.write(thumbnailBytes);
         }
