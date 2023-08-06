@@ -24,15 +24,15 @@ public class CropperImageUploaderServlet extends HttpServlet
         response.setCharacterEncoding("UTF-8");
 
         Part imagePart = request.getPart("image"); // Retrieves <input type="file" name="image">
-
+        String userName = request.getParameter("username");
         String mimeType = request.getParameter("mimeType"); // Retrieves <input type="text" name="mimeType">
         String extension = request.getParameter("fileExtension"); // Retrieves <input type="text" name="fileExtension">
-
-        String fileName = "userProfileImage." + extension;
+        String imageType = request.getParameter("imageType");
+        String fileName = imageType + "." + extension;
 
         // Get absolute server path and the location where the file will be stored
         String applicationPath = request.getServletContext().getRealPath("");
-        String uploadFilePath = applicationPath + File.separator + CROPPED_DIRECTORY;
+        String uploadFilePath = applicationPath + File.separator + CROPPED_DIRECTORY + File.separator + userName;
 
         // Create directory if it doesn't exist
         File fileSaveDir = new File(uploadFilePath);
